@@ -11,7 +11,7 @@ class Routes {
   static const String wishListScreen = '/wishListScreen';
   static const String seeAllNewScreen = '/seeAllNewScreen';
   static const String seeAllSaleScreen = '/seeAllSaleScreen';
-  static const String dynamicFormsScreen = '/dynamicFormsScreen';
+  static const String itemsDetailsScreen = '/itemsDetailsScreen';
   static const String myProjectsScreen = '/myProjectsScreen';
   static const String createTask = '/createTask';
 

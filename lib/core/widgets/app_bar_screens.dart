@@ -1,3 +1,4 @@
+import 'package:alhayik/core/constant/color/my_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +16,6 @@ class AppBaScreens extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          // Conditionally show the back arrow
           if (showBackButton)
             Align(
               alignment: Alignment.centerLeft,
@@ -25,7 +25,7 @@ class AppBaScreens extends StatelessWidget {
                 },
                 icon: const Icon(
                   Icons.arrow_back,
-                  color: Colors.black,
+                  color: MyColor.dotindecator,
                 ),
               ),
             ),

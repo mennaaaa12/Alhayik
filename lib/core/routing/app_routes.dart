@@ -9,6 +9,7 @@ import 'package:alhayik/features/employee/home/main_page/ui/main_home.dart';
 import 'package:alhayik/features/employee/home/profile/ui/profile.dart';
 import 'package:alhayik/features/employee/home/search/ui/search.dart';
 import 'package:alhayik/features/employee/home/wish_list/ui/wish_list.dart';
+import 'package:alhayik/features/employee/item/ui/items_details.dart';
 import 'package:alhayik/features/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 
@@ -63,6 +64,10 @@ class AppRouter {
         case Routes.seeAllSaleScreen:
         return MaterialPageRoute(
           builder: (_) => const SeeAllSale(),
+        );
+         case Routes.itemsDetailsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ItemsDetails(),
         );
       default:
         return null;
