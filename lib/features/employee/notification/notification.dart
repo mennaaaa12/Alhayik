@@ -32,7 +32,7 @@ class NotificationScreen extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 120.h,
+                   
                     decoration: BoxDecoration(
                         color: MyColor.primaryBackGroundColor,
                         borderRadius: BorderRadius.circular(6.r),
@@ -87,7 +87,7 @@ class NotificationScreen extends StatelessWidget {
                    SizedBox(height: 20.h),
                     Container(
                     width: double.infinity,
-                    height: 120.h,
+                   
                     decoration: BoxDecoration(
                         color: MyColor.primaryBackGroundColor,
                         borderRadius: BorderRadius.circular(6.r),

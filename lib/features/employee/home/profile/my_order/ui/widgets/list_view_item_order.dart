@@ -104,16 +104,16 @@ class ListViewItemOrder extends StatelessWidget {
                         'T-shirt over size',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 14.sp,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 5.h),
+                      SizedBox(height: 2.h),
                       Text(
                         'solid color',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 14.sp,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -137,19 +137,20 @@ class ListViewItemOrder extends StatelessWidget {
                       ),
                       SizedBox(height: 15.h),
                      Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                          Text(
                         '200\$',
                         style: TextStyle(
                           color: MyColor.primaryColor,
-                          fontSize: 14.sp,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(width: 15.w),
+                     
                       Container(
                         height: 40.h,
-                        width: 90,
+                       
                         decoration: BoxDecoration(
                           color: MyColor.primaryColor,
                           borderRadius: BorderRadius.circular(8.r),
@@ -157,7 +158,7 @@ class ListViewItemOrder extends StatelessWidget {
                         ),
                         child: TextButton(onPressed: (){
                           Navigator.pushNamed(context, Routes.traceOrder);
-                        }, child: Text('Trace order',style: TextStyle(color: MyColor.primaryBackGroundColor,fontSize: 12.sp),)),
+                        }, child: Text('Trace order',style: TextStyle(color: MyColor.primaryBackGroundColor,fontSize: 9.sp),)),
                       )
                       ],
                      )

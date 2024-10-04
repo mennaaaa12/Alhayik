@@ -95,7 +95,7 @@ class ItemDetailsAndPrice extends StatelessWidget {
                   color: MyColor.primaryBackGroundColor,
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 30.h),
+                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 18.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -103,7 +103,7 @@ class ItemDetailsAndPrice extends StatelessWidget {
                         'T-shirt over size',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 14.sp,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -112,7 +112,7 @@ class ItemDetailsAndPrice extends StatelessWidget {
                         'solid color',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 14.sp,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),

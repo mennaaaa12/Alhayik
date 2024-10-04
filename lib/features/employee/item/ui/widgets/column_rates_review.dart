@@ -21,7 +21,7 @@ class ColumnRatesReview extends StatelessWidget {
                   fontSize: 15.sp),
             ),
             SizedBox(
-              width: 25.w,
+              width:10.w,
             ),
             Row(
               children: [
@@ -40,7 +40,7 @@ class ColumnRatesReview extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 5.h,
+          height: 10.h,
         ),
          Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -53,7 +53,7 @@ class ColumnRatesReview extends StatelessWidget {
                   fontSize: 15.sp),
             ),
             SizedBox(
-              width: 15.w,
+              width: 10.w,
             ),
             Row(
               children: [
@@ -72,7 +72,7 @@ class ColumnRatesReview extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 5.h,
+          height: 10.h,
         ),
        Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -85,7 +85,7 @@ class ColumnRatesReview extends StatelessWidget {
                   fontSize: 15.sp),
             ),
             SizedBox(
-              width: 49.w,
+              width: 10.w,
             ),
             Row(
               children: [

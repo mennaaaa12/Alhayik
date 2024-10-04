@@ -54,7 +54,7 @@ class RowStarsAndAddComment extends StatelessWidget {
             style: TextStyle(
                 decoration: TextDecoration.underline,
                 color: MyColor.dotindecator,
-                fontSize: 18.sp,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w500),
           ),
         )

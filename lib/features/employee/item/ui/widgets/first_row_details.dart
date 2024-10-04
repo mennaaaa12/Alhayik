@@ -14,7 +14,7 @@ class FirstRowDetails extends StatelessWidget {
           '300 SAR',
           style: TextStyle(
             color: MyColor.dotindecator,
-            fontSize: 20.sp,
+            fontSize: 15.sp,
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -23,7 +23,7 @@ class FirstRowDetails extends StatelessWidget {
           '450 SAR',
           style: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: 15.sp,
+            fontSize: 10.sp,
             color: MyColor.midgrey,
             decoration: TextDecoration.lineThrough,
           ),
@@ -38,7 +38,7 @@ class FirstRowDetails extends StatelessWidget {
           '14.8 (60 Reviews)',
           style: TextStyle(
             color: MyColor.midgrey,
-            fontSize: 14.sp,
+            fontSize: 12.sp,
             fontWeight: FontWeight.w500,
           ),
         ),

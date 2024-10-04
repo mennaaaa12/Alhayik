@@ -9,6 +9,7 @@ class RowImageNameStarTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         const CircleAvatar(
           backgroundImage: AssetImage('assets/images/image_review.png'),
@@ -24,7 +25,7 @@ class RowImageNameStarTime extends StatelessWidget {
               'Nihad Ghazal',
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w500),
             ),
             SizedBox(
@@ -65,14 +66,12 @@ class RowImageNameStarTime extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
-          width: 95.w,
-        ),
+        const Spacer(),
         Text(
           '1 hour',
           style: TextStyle(
               color: MyColor.midgrey,
-              fontSize: 15.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w400),
         ),
       ],

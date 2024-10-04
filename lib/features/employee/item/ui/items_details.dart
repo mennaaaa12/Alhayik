@@ -100,7 +100,7 @@ class _ItemsDetailsState extends State<ItemsDetails> {
                   'T-shirt over size solid color',
                   style: TextStyle(
                       color: MyColor.midgrey,
-                      fontSize: 18.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500),
                 ),
                 const RowColor(),

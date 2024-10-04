@@ -46,7 +46,7 @@ class MyOrder extends StatelessWidget {
                 indicatorSize: TabBarIndicatorSize.label,
                 labelColor: Colors.black,
                 unselectedLabelColor: MyColor.midgrey,
-                padding: EdgeInsets.symmetric(horizontal: 40.w),
+                padding: EdgeInsets.symmetric(horizontal: 15.w),
               ),
               
            SizedBox(height: 5.h,),

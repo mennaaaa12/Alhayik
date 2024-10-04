@@ -15,112 +15,123 @@ class BoxImageDetails extends StatelessWidget {
         onTap: () {
           Navigator.pushNamed(context, Routes.itemsDetailsScreen);
         },
-        child: Container(
-          width: 160.w,
-          
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.r),
-            color: MyColor.primaryBackGroundColor,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                spreadRadius: 2,
-                blurRadius: 8,
-                offset: const Offset(0, 4),
-              ),
-            ],
-          ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
-            child: Column(
-              mainAxisSize: MainAxisSize.min, // Allow column to take only needed space
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8.r),
-                  child: Image.asset(
-                    'assets/images/image_home.png',
-                    width: 160.w,  // Match the container's width
-                    height: 100.h,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                SizedBox(height: 5.h),
-                Text(
-                  'T-Shirt',
-                  style: TextStyle(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-                SizedBox(height: 4.h),
-                Text(
-                  'Quantity Available: 20',
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    color: MyColor.midgrey,
-                  ),
-                ),
-                SizedBox(height: 5.h),
-                Center(
-                  child: Text(
-                    '450 SAR',
-                    style: TextStyle(
-                      fontSize: 15.sp,
-                      color: MyColor.midgrey,
-                      decoration: TextDecoration.lineThrough,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 5.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '7 SAR',
-                      style: TextStyle(
-                        fontSize: 17.sp,
-                        color: MyColor.primaryColor,
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.zero,
-                      height: 45.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(color: MyColor.lightgrey),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.shopping_bag_outlined,
-                              color: Colors.black,
-                              size: 20.sp,
-                            ),
-                          ),
-                          Container(
-                            width: 1.w,
-                            height: 40.h,
-                            color: MyColor.lightgrey,
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              FontAwesomeIcons.heart,
-                              color: Colors.black,
-                              size: 16.sp,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+        child: Expanded(
+          child: Container(
+            width: 160.w,
+            
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.r),
+              color: MyColor.primaryBackGroundColor,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  spreadRadius: 2,
+                  blurRadius: 8,
+                  offset: const Offset(0, 4),
                 ),
               ],
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 0.w, vertical: 1.h),
+              child: Column(
+                mainAxisSize: MainAxisSize.min, 
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.r),
+                    child: Image.asset(
+                      'assets/images/image_home.png',
+                      width: double.infinity,  // Match the container's width
+                      height: 100.h,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SizedBox(height: 5.h),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      'T-Shirt',
+                      style: TextStyle(
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 5.h),
+                    child: Text(
+                      'Quantity Available:20',
+                      style: TextStyle(
+                        fontSize: 10.sp,
+                        color: MyColor.midgrey,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 5.h),
+                  Center(
+                    child: Text(
+                      '450 SAR',
+                      style: TextStyle(
+                        fontSize: 11.sp,
+                        color: MyColor.midgrey,
+                        decoration: TextDecoration.lineThrough,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 5.h),
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 5.0.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '7 SAR',
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            color: MyColor.primaryColor,
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.zero,
+                          height: 45.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8.r),
+                            border: Border.all(color: MyColor.lightgrey),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.shopping_bag_outlined,
+                                  color: Colors.black,
+                                  size: 20.sp,
+                                ),
+                              ),
+                              Container(
+                                width: 1.w,
+                                height: 40.h,
+                                color: MyColor.lightgrey,
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  FontAwesomeIcons.heart,
+                                  color: Colors.black,
+                                  size: 16.sp,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
