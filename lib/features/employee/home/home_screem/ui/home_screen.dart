@@ -45,10 +45,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     size: 20.sp,
                   ),
                   hintText: 'What are you looking For ?',
-                  suffixIcon: Icon(
-                    FontAwesomeIcons.filter,
-                    color: MyColor.midgrey,
-                    size: 20.sp,
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.filter);
+                    },
+                    child: Icon(
+                      FontAwesomeIcons.filter,
+                      color: MyColor.midgrey,
+                      size: 20.sp,
+                    ),
                   ),
                 ),
                 SizedBox(height: 20.h),

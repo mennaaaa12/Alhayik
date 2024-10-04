@@ -6,6 +6,7 @@ import 'package:alhayik/features/employee/home/profile/ui/widgets/row_details_pr
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:frino_icons/frino_icons.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -123,7 +124,9 @@ class _ProfileState extends State<Profile> {
                     ),
                     SizedBox(height: 20.h),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, Routes.myOrder);
+                      },
                       child: const RowDetailsProfile(
                         iconData: Icons.shopping_bag_outlined,
                         txt: 'My Order',
@@ -131,7 +134,9 @@ class _ProfileState extends State<Profile> {
                     ),
                     SizedBox(height: 20.h),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, Routes.wishListScreen);
+                      },
                       child: const RowDetailsProfile(
                         iconData: FontAwesomeIcons.heart,
                         txt: 'My Favorite',
@@ -162,13 +167,7 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     SizedBox(height: 20.h),
-                    GestureDetector(
-                      onTap: () {},
-                      child: RowDetailsProfile(
-                        iconData: Icons.language_outlined,
-                        txt: selectedLanguage,
-                      ),
-                    ),
+                   
                     SizedBox(height: 40.h),
                     GestureDetector(
                       onTap: () {},
@@ -199,7 +198,7 @@ class _ProfileState extends State<Profile> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.facebook,size: 20.sp,),
+                        Icon(FrinoIcons.f_facebook_circle,size: 20.sp,),
                         SizedBox(width: 10.h,),
                         Icon(FontAwesomeIcons.instagram,size: 20.sp,),
                         SizedBox(width: 10.h,),

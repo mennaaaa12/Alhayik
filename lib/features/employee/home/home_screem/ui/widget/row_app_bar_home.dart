@@ -1,3 +1,4 @@
+import 'package:alhayik/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,9 +13,11 @@ class RowAppBarHome extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            onPressed: () {},
-            icon:
-                Icon(Icons.notifications_none, color: Colors.black, size: 27.sp),
+            onPressed: () {
+              Navigator.pushNamed(context, Routes.notification);
+            },
+            icon: Icon(Icons.notifications_none,
+                color: Colors.black, size: 27.sp),
           ),
           SizedBox(width: 10.w),
           Image.asset(
@@ -24,7 +27,9 @@ class RowAppBarHome extends StatelessWidget {
           ),
           SizedBox(width: 10.w),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+               Navigator.pushNamed(context, Routes.cartShopping);
+            },
             icon: Icon(Icons.shopping_bag_outlined,
                 color: Colors.black, size: 25.sp),
           ),

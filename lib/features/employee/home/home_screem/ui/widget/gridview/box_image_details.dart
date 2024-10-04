@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class BoxImageDetails extends StatelessWidget {
-  const BoxImageDetails({super.key});
+class BoxImageDetailshome extends StatelessWidget {
+  const BoxImageDetailshome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class BoxImageDetails extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(height: 5.h),
+                SizedBox(height: 15.h),
                 Text(
                   'T-Shirt',
                   style: TextStyle(
@@ -52,7 +52,7 @@ class BoxImageDetails extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(height: 4.h),
+                SizedBox(height: 10.h),
                 Text(
                   'Quantity Available : 20',
                   style: TextStyle(
@@ -71,7 +71,7 @@ class BoxImageDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 5.h),
+                SizedBox(height: 15.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

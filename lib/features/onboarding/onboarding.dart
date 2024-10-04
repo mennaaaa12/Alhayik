@@ -14,112 +14,109 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   int currentIndex = 0;
-  late PageController _controller;
+  late PageController _pageController; // Declare PageController
 
   @override
   void initState() {
     super.initState();
-    _controller = PageController(initialPage: 0);
+    _pageController = PageController(); // Initialize it
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _pageController.dispose(); // Dispose the controller
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(0, 71, 62, 33), // Set background to transparent
+      backgroundColor: const Color.fromARGB(0, 71, 62, 33),
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Image.asset(
-              contents[currentIndex].image,
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              fit: BoxFit.cover, // Ensure this covers the entire background
-            ),
+          PageView.builder(
+            controller: _pageController, // Use the PageController here
+            itemCount: contents.length,
+            onPageChanged: (index) {
+              setState(() {
+                currentIndex = index; // Update the current index
+              });
+            },
+            itemBuilder: (context, index) {
+              return SizedBox(
+                width: MediaQuery.of(context).size.width, // Full width
+                height: MediaQuery.of(context).size.height, // Full height
+                child: Image.asset(
+                  contents[index].image,
+                  fit: BoxFit.cover, // Ensures image covers the container
+                ),
+              );
+            },
           ),
 
-          // Onboarding Content
           Column(
             children: [
               Expanded(
-                child: PageView.builder(
-                  controller: _controller,
-                  onPageChanged: (int index) {
-                    setState(() {
-                      currentIndex = index;
-                    });
-                  },
-                  itemCount: contents.length,
-                  itemBuilder: (context, i) {
-                    return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 40.w),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 172.h),
-                          if (currentIndex < contents.length - 1) ...[
-                            // Displaying title and description for all but last page
-                            Text(
-                              contents[i].title,
-                              style: TextStyle(
-                                fontSize: 24.sp,
-                                fontWeight: FontWeight.w500,
-                                color: MyColor.primaryColorText,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40.w),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 172.h),
+                      if (currentIndex < contents.length - 1) ...[
+                        // Displaying title and description for all but last page
+                        Text(
+                          contents[currentIndex].title,
+                          style: TextStyle(
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w500,
+                            color: MyColor.primaryColorText,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 10.h),
+                        Text(
+                          contents[currentIndex].description,
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            color: MyColor.primaryColorTextsecond,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ] else ...[
+                        // Last page content
+                        SizedBox(height: 370.h),
+                        ButtonOnboarding(
+                          primaryColor: MyColor.primaryColor,
+                          txt: 'Login',
+                          onPressed: () {
+                            Navigator.pushNamed(context, Routes.loginScreen);
+                          },
+                        ),
+                        SizedBox(height: 15.h),
+                        SizedBox(
+                          width: double.infinity,
+                          height: 60.h,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              backgroundColor: MyColor.primaryColor,
+                              foregroundColor: MyColor.primaryBackGroundColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.r),
+                                side: const BorderSide(color: Colors.black),
                               ),
-                              textAlign: TextAlign.center,
                             ),
-                            SizedBox(height: 10.h),
-                            Text(
-                              contents[i].description,
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w400,
-                                color: MyColor.primaryColorTextsecond,
-                              ),
-                              textAlign: TextAlign.center,
+                            child: Text(
+                              'Login With Phone Number',
+                              style: TextStyle(fontSize: 16.sp),
                             ),
-                          ] else ...[
-                            // Last page content
-                            SizedBox(height: 370.h),
-                            ButtonOnboarding(
-                              primaryColor: MyColor.primaryColor,
-                              txt: 'Login',
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                    context, Routes.loginScreen);
-                              },
-                            ),
-                            SizedBox(height: 15.h),
-                            SizedBox(
-                              width: double.infinity,
-                              height: 60.h,
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  backgroundColor: MyColor.primaryColor,
-                                  foregroundColor:
-                                      MyColor.primaryBackGroundColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.r),
-                                    side: const BorderSide(color: Colors.black),
-                                  ),
-                                ),
-                                child: Text(
-                                  'Login With Phone Number',
-                                  style: TextStyle(fontSize: 16.sp),
-                                ),
-                              ),
-                            )
-                          ],
-                        ],
-                      ),
-                    );
-                  },
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
                 ),
               ),
 
@@ -143,12 +140,18 @@ class _OnboardingState extends State<Onboarding> {
                   child: TextButton(
                     onPressed: () {
                       if (currentIndex == contents.length - 1) {
+                        // Navigate to sign up screen when on the last page
                         Navigator.pushNamed(context, Routes.signUpScreen);
                       } else {
-                        _controller.nextPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOut, // Adjust the transition curve for smoother transition
-                        );
+                        // Move to the next page in the PageView
+                        setState(() {
+                          currentIndex++;
+                          _pageController.animateToPage(
+                            currentIndex,
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        });
                       }
                     },
                     style: TextButton.styleFrom(

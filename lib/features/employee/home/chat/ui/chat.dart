@@ -7,7 +7,7 @@ class Chat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Chat',style: TextStyle(color: MyColor.primaryColorText),),
+      child: Text('..........',style: TextStyle(color: MyColor.primaryColorText),),
     );
   }
 }

@@ -26,6 +26,8 @@ class WishList extends StatelessWidget {
                 ),
               ),
               const Gridviewwishlist(),
+              SizedBox(
+                height: 20.h,)
             ],
           ),
         ),

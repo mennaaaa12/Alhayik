@@ -1,11 +1,17 @@
 import 'package:alhayik/core/constant/color/my_color.dart';
+import 'package:alhayik/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppBaScreens extends StatelessWidget {
-  const AppBaScreens({super.key, required this.txt, this.showBackButton = false});
+  const AppBaScreens(
+      {super.key,
+      required this.txt,
+      this.showBackButton = false,
+      this.showicons = true});
   final String txt;
   final bool showBackButton;
+  final bool showicons;
 
   @override
   Widget build(BuildContext context) {
@@ -40,22 +46,32 @@ class AppBaScreens extends StatelessWidget {
                   fontWeight: FontWeight.w600),
             ),
           ),
-
-          Align(
-            alignment: Alignment.centerRight,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.notifications_none,
-                    color: Colors.black, size: 27.sp),
-                SizedBox(
-                  width: 10.w,
-                ),
-                Icon(Icons.shopping_bag_outlined,
-                    color: Colors.black, size: 25.sp),
-              ],
+          if (showicons)
+            Align(
+              alignment: Alignment.centerRight,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.notification);
+                    },
+                    child: Icon(Icons.notifications_none,
+                        color: Colors.black, size: 27.sp),
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  GestureDetector(
+                     onTap: () {
+                      Navigator.pushNamed(context, Routes.cartShopping);
+                    },
+                    child: Icon(Icons.shopping_bag_outlined,
+                        color: Colors.black, size: 25.sp),
+                  ),
+                ],
+              ),
             ),
-          ),
         ],
       ),
     );

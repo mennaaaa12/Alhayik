@@ -14,7 +14,7 @@ class GridViewDetails extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const BoxImageDetails();
+          return const BoxImageDetailshome();
         },
       ),
     );
