@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "49894546420",
+    "project_id": "authintication-b50be",
+    "storage_bucket": "authintication-b50be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49894546420:android:e79c4df2964552005f37a1",
+        "android_client_info": {
+          "package_name": "com.example.alhayik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49894546420-3ho4ns276de0psatmpdqmooinckgqa3t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC45nHyIM4yRVgtIryowUtCh04qSANg70M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49894546420-3ho4ns276de0psatmpdqmooinckgqa3t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

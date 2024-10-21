@@ -14,7 +14,7 @@ class ButtonOnboarding extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 60.h,
+      height: 55.h,
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(

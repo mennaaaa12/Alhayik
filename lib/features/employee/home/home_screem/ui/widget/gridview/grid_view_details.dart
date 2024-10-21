@@ -8,7 +8,7 @@ class GridViewDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 290.h, 
+      height: 250.h, 
       child: ListView.builder(
         
         scrollDirection: Axis.horizontal,

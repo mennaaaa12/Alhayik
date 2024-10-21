@@ -66,7 +66,7 @@ class Cart extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Sub total:',
+                          'Shipping fee:',
                           style: TextStyle(
                               color: MyColor.midgrey,
                               fontSize: 14.sp,

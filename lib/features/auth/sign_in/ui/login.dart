@@ -1,14 +1,58 @@
+import 'dart:developer';
 import 'package:alhayik/core/constant/color/my_color.dart';
 import 'package:alhayik/core/routing/routes.dart';
 import 'package:alhayik/features/auth/sign_in/ui/widgets/custom_button.dart';
 import 'package:alhayik/features/auth/sign_in/ui/widgets/email_and_password.dart';
 import 'package:alhayik/features/auth/sign_in/ui/widgets/forget_pass.dart';
-
+import 'package:alhayik/sign_in_method/sign_in_methods.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
+
+  // Helper function to handle Facebook login
+  static Future<void> loginWithFacebook(BuildContext context) async {
+    try {
+      final LoginResult loginResult = await FacebookAuth.instance.login();
+
+      if (loginResult.status == LoginStatus.success) {
+        final OAuthCredential credential = FacebookAuthProvider.credential(
+            loginResult.accessToken!.tokenString);
+
+        UserCredential userCredential =
+            await FirebaseAuth.instance.signInWithCredential(credential);
+
+        Navigator.pushNamed(context, Routes.mainPage); // Redirect to home page
+      } else {
+        log('Facebook login failed: ${loginResult.message}');
+      }
+    } catch (e) {
+      log('Error during Facebook login: $e');
+    }
+  }
+
+  // Helper function to show error dialog
+  void _showErrorDialog(BuildContext context, String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Error'),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +74,6 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 79.h),
-
                 const EmailAndPassword(),
                 SizedBox(height: 5.h),
                 const ForgetPass(),
@@ -41,9 +84,33 @@ class Login extends StatelessWidget {
                   },
                   txt: 'Login',
                 ),
-
-                SizedBox(height: 100.h), 
-
+                SizedBox(height: 20.h),
+                Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                  children:[
+                      IconButton(
+                        onPressed: (){
+                          loginWithFacebook(context);
+                        },
+                        icon: Icon(FontAwesomeIcons.facebook
+                        , color: Colors.blue,
+                        ),
+                        
+                      ),
+                      SizedBox( width: 25.w,),
+                      IconButton(
+                        onPressed: (){
+                          SignInMethods.signInWithGoogle();
+                        },
+                        icon: Icon(FontAwesomeIcons.google
+                        , color: Colors.red,
+                        ),
+                        
+                      ),
+                  ]
+                ),
+                
+                SizedBox(height: 20.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -70,7 +137,6 @@ class Login extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 SizedBox(height: 60.h),
               ],
             ),

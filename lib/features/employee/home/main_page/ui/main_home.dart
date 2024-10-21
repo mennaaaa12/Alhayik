@@ -20,7 +20,7 @@ class _MainHomeState extends State<MainHome> {
   int _page = 0;
   final List<Widget> _pages = [
     const HomeScreen(),
-    const Categories(), 
+    const Categories(),
     const Chat(),
     const WishList(),
     const Profile(),
@@ -36,11 +36,11 @@ class _MainHomeState extends State<MainHome> {
         color: Colors.black,
         animationDuration: const Duration(milliseconds: 300),
         items: <Widget>[
-          _buildAnimatedIcon(0, FontAwesomeIcons.home, FontAwesomeIcons.home),
-          _buildAnimatedIcon(1, FontAwesomeIcons.list, FontAwesomeIcons.list),
-          _buildAnimatedIcon(2, FontAwesomeIcons.crown, FontAwesomeIcons.crown),
-          _buildAnimatedIcon(3, FontAwesomeIcons.heart, FontAwesomeIcons.solidHeart),
-          _buildAnimatedIcon(4, FontAwesomeIcons.user, FontAwesomeIcons.solidUser),
+          _buildIcon(0, FontAwesomeIcons.home, FontAwesomeIcons.home),
+          _buildIcon(1, FontAwesomeIcons.list, FontAwesomeIcons.list),
+          _buildIcon(2, FontAwesomeIcons.crown, FontAwesomeIcons.crown),
+          _buildIcon(3, FontAwesomeIcons.heart, FontAwesomeIcons.solidHeart),
+          _buildIcon(4, FontAwesomeIcons.user, FontAwesomeIcons.solidUser),
         ],
         onTap: (index) {
           setState(() {
@@ -59,17 +59,11 @@ class _MainHomeState extends State<MainHome> {
   }
 
   // This method builds an animated icon with transition effects
-  Widget _buildAnimatedIcon(int index, IconData icon, IconData activeIcon) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
-      height: _page == index ? 35.h : 20.h, 
-      width: _page == index ? 35.w : 20.w, 
-      child: Icon(
-        _page == index ? activeIcon : icon,
-        size: _page == index ? 20 : 20, 
-        color: _page == index ? MyColor.primaryBackGroundColor : MyColor.primaryBackGroundColor, 
-      ),
+  Widget _buildIcon(int index, IconData icon, IconData activeIcon) {
+    return Icon(
+      _page == index ? activeIcon : icon,
+      size: _page == index ? 25 : 20,
+      color: MyColor.primaryBackGroundColor,
     );
   }
 }

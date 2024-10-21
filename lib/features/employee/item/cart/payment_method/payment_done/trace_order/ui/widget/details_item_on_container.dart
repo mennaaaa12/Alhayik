@@ -8,7 +8,7 @@ class DetailsItemOnContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 18.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 25.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -16,7 +16,7 @@ class DetailsItemOnContainer extends StatelessWidget {
             'T-shirt over size',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 12.sp,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -25,7 +25,7 @@ class DetailsItemOnContainer extends StatelessWidget {
             'solid color',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -34,7 +34,7 @@ class DetailsItemOnContainer extends StatelessWidget {
             'size: XL',
             style: TextStyle(
               color: MyColor.midgrey,
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -43,7 +43,7 @@ class DetailsItemOnContainer extends StatelessWidget {
             'Quantity: 1',
             style: TextStyle(
               color: MyColor.midgrey,
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -52,7 +52,7 @@ class DetailsItemOnContainer extends StatelessWidget {
             '200\$',
             style: TextStyle(
               color: MyColor.primaryColor,
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
             ),
           ),

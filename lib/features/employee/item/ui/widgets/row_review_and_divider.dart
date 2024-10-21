@@ -28,8 +28,8 @@ class RowReviewAndDivider extends StatelessWidget {
                 '4.8',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 13.sp, 
-                  fontWeight: FontWeight.w500,
+                  fontSize: 18.sp, 
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               

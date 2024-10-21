@@ -15,39 +15,46 @@ class ItemDetails extends StatelessWidget {
         color: MyColor.lightWhite,
         borderRadius: BorderRadius.circular(8.r),
       ),
-      child: Row(
-        children: [
-          Container(
-            width: 170.w,
-            height: 200.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.r),
-            ),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Image.asset(
-                  'assets/images/shirt2.png',
-                  width: 150.w,
-                  height: 195.h,
-                  fit: BoxFit.cover,
+      child: Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 5.w,vertical: 5.w),
+        child: Row(
+          children: [
+            Expanded(
+              child: Container(
+               
+                height: 200.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.r),
                 ),
-              ],
-            ),
-          ),
-          Container(
-            width: 167.h,
-            height: 195.h,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(8),
-                bottomRight: Radius.circular(8),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/shirt2.png',
+                      width: 150.w,
+                      height: 195.h,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
               ),
-              color: MyColor.primaryBackGroundColor,
             ),
-            child: const DetailsItemOnContainer()
-          ),
-        ],
+            Expanded(
+              child: Container(
+              
+               
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(8),
+                    bottomRight: Radius.circular(8),
+                  ),
+                  color: MyColor.primaryBackGroundColor,
+                ),
+                child: const DetailsItemOnContainer()
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

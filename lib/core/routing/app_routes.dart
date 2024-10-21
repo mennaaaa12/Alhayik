@@ -10,6 +10,7 @@ import 'package:alhayik/features/employee/home/home_screem/see_all_new/ui/see_al
 import 'package:alhayik/features/employee/home/home_screem/see_all_sale/ui/see_all_sale.dart';
 import 'package:alhayik/features/employee/home/home_screem/ui/home_screen.dart';
 import 'package:alhayik/features/employee/home/main_page/ui/main_home.dart';
+import 'package:alhayik/features/employee/home/profile/edit_profile/ui/edit_profile.dart';
 import 'package:alhayik/features/employee/home/profile/my_order/ui/my_order.dart';
 import 'package:alhayik/features/employee/home/profile/ui/profile.dart';
 import 'package:alhayik/features/employee/home/search/ui/search.dart';
@@ -128,6 +129,10 @@ class AppRouter {
          case Routes.verificationScreen:
         return MaterialPageRoute(
           builder: (_) => const Verification(),
+        );
+        case Routes.editProfile:
+        return MaterialPageRoute(
+          builder: (_) => const EditProfile(),
         );
       default:
         return null;

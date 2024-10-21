@@ -36,6 +36,7 @@ class RowDetailsProfile extends StatelessWidget {
           Icons.arrow_forward_ios,
           color: MyColor.dotindecator,
         ),
+        
       ],
     );
   }

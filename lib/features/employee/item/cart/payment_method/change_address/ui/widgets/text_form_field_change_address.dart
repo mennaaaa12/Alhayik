@@ -18,6 +18,10 @@ final String txt;
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),
             ),
+           focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: MyColor.primaryColor,
+            ),)
           ),
         )
       ],

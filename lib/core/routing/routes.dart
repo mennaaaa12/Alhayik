@@ -23,4 +23,5 @@ class Routes {
   static const String traceOrder = '/traceOrder';
   static const String cartShopping = '/cartShopping';
   static const String verificationScreen = '/verificationScreen';
+  static const String editProfile='/editProfile';
 }

@@ -86,7 +86,7 @@ class _OnboardingState extends State<Onboarding> {
                         ),
                       ] else ...[
                         // Last page content
-                        SizedBox(height: 370.h),
+                        SizedBox(height: 425.h),
                         ButtonOnboarding(
                           primaryColor: MyColor.primaryColor,
                           txt: 'Login',
@@ -94,10 +94,10 @@ class _OnboardingState extends State<Onboarding> {
                             Navigator.pushNamed(context, Routes.loginScreen);
                           },
                         ),
-                        SizedBox(height: 15.h),
+                        SizedBox(height: 5.h),
                         SizedBox(
                           width: double.infinity,
-                          height: 60.h,
+                          height: 55.h,
                           child: TextButton(
                             onPressed: () {},
                             style: TextButton.styleFrom(
@@ -122,21 +122,24 @@ class _OnboardingState extends State<Onboarding> {
 
               // Dots Indicator only for non-last page
               if (currentIndex < contents.length - 1)
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    contents.length,
-                    (index) => buildDot(index),
+                Padding(
+                  padding:  EdgeInsets.symmetric(vertical: 20.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      contents.length,
+                      (index) => buildDot(index),
+                    ),
                   ),
                 ),
 
               // Next/Continue Button
               Padding(
                 padding: EdgeInsets.only(
-                    bottom: 40.h, left: 40.w, right: 40.w, top: 20),
+                    bottom: 40.h, left: 40.w, right: 40.w, top: 0),
                 child: SizedBox(
                   width: double.infinity,
-                  height: 60.h,
+                  height: 55.h,
                   child: TextButton(
                     onPressed: () {
                       if (currentIndex == contents.length - 1) {

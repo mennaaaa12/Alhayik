@@ -65,108 +65,113 @@ class ListViewItemOrder extends StatelessWidget {
               topRight: Radius.circular(8.r),
             ),
           ),
-          child: Row(
-            children: [
-              Container(
-                width: 165.0.w,
-                height: 200.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/shirt2.png',
-                      width: 150.w,
-                      height: 195.h,
-                      fit: BoxFit.cover,
+          child: Padding(
+           padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                   
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.r),
                     ),
-                  ],
-                ),
-              ),
-              Container(
-                width: 170.h,
-                height: 193.h,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(8),
-                    bottomRight: Radius.circular(8),
-                  ),
-                  color: MyColor.primaryBackGroundColor,
-                ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'T-shirt over size',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        'solid color',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 5.h),
-                      Text(
-                        'size: XL',
-                        style: TextStyle(
-                          color: MyColor.midgrey,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 5.h),
-                      Text(
-                        'Quantity: 1',
-                        style: TextStyle(
-                          color: MyColor.midgrey,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 15.h),
-                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    child: Stack(
+                      alignment: Alignment.center,
                       children: [
-                         Text(
-                        '200\$',
-                        style: TextStyle(
-                          color: MyColor.primaryColor,
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w500,
+                        Image.asset(
+                          'assets/images/shirt2.png',
+                          width: 150.w,
+                          height: 195.h,
+                          fit: BoxFit.cover,
                         ),
-                      ),
-                     
-                      Container(
-                        height: 40.h,
-                       
-                        decoration: BoxDecoration(
-                          color: MyColor.primaryColor,
-                          borderRadius: BorderRadius.circular(8.r),
-                          border: Border.all(color: Colors.black),
-                        ),
-                        child: TextButton(onPressed: (){
-                          Navigator.pushNamed(context, Routes.traceOrder);
-                        }, child: Text('Trace order',style: TextStyle(color: MyColor.primaryBackGroundColor,fontSize: 9.sp),)),
-                      )
                       ],
-                     )
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+                Expanded(
+                  child: Container(
+                  
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(8),
+                        bottomRight: Radius.circular(8),
+                      ),
+                      color: MyColor.primaryBackGroundColor,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'T-shirt over size',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(height: 2.h),
+                          Text(
+                            'solid color',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(height: 5.h),
+                          Text(
+                            'size: XL',
+                            style: TextStyle(
+                              color: MyColor.midgrey,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(height: 5.h),
+                          Text(
+                            'Quantity: 1',
+                            style: TextStyle(
+                              color: MyColor.midgrey,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(height: 15.h),
+                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                             Text(
+                            '200\$',
+                            style: TextStyle(
+                              color: MyColor.primaryColor,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                         
+                          Container(
+                            height: 40.h,
+                           
+                            decoration: BoxDecoration(
+                              color: MyColor.primaryColor,
+                              borderRadius: BorderRadius.circular(8.r),
+                              border: Border.all(color: Colors.black),
+                            ),
+                            child: TextButton(onPressed: (){
+                              Navigator.pushNamed(context, Routes.traceOrder);
+                            }, child: Text('Trace order',style: TextStyle(color: MyColor.primaryBackGroundColor,fontSize: 11.sp),)),
+                          )
+                          ],
+                         )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

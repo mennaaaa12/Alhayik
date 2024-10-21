@@ -3,18 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ContainersColor extends StatelessWidget {
-  const ContainersColor({super.key, this.color, this.bordercolor});
-final Color? color;
-final Color? bordercolor;
+  final Color color;
+  final Color? bordercolor;
+  final bool isBold;
+
+  const ContainersColor({
+    required this.color,
+    this.bordercolor,
+    this.isBold = false, // Default is not bold
+    super.key, 
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 30.h,
-      width: 30.w,
+      height: 40.h,
+      width: 40.w,
       decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color:color,
-          border: Border.all(color:bordercolor?? MyColor.primaryColor)),
+        color: color,
+        border: Border.all(
+          color: bordercolor ?? Colors.transparent,
+        ),
+        //borderRadius: BorderRadius.circular(8.r),
+        shape: BoxShape.circle
+      ),
+    
     );
   }
 }
+

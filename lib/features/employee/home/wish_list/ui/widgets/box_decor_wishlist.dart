@@ -46,9 +46,9 @@ class BoxImageDetails extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  SizedBox(height: 5.h),
+                  SizedBox(height: 10.h),
                   Padding(
-                    padding: const EdgeInsets.all(5.0),
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
                     child: Text(
                       'T-Shirt',
                       style: TextStyle(
@@ -60,31 +60,21 @@ class BoxImageDetails extends StatelessWidget {
                   ),
                 
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 5.h),
+                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                     child: Text(
                       'Quantity Available:20',
                       style: TextStyle(
-                        fontSize: 10.sp,
+                        fontSize: 12.sp,
                         color: MyColor.midgrey,
                       ),
                     ),
                   ),
-                  SizedBox(height: 5.h),
-                  Center(
-                    child: Text(
-                      '450 SAR',
-                      style: TextStyle(
-                        fontSize: 11.sp,
-                        color: MyColor.midgrey,
-                        decoration: TextDecoration.lineThrough,
-                      ),
-                    ),
-                  ),
+                
                   SizedBox(height: 5.h),
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 5.0.w),
+                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    
                       children: [
                         Text(
                           '7 SAR',
@@ -93,43 +83,58 @@ class BoxImageDetails extends StatelessWidget {
                             color: MyColor.primaryColor,
                           ),
                         ),
-                        Container(
-                          padding: EdgeInsets.zero,
-                          height: 45.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.r),
-                            border: Border.all(color: MyColor.lightgrey),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.shopping_bag_outlined,
-                                  color: Colors.black,
-                                  size: 20.sp,
-                                ),
-                              ),
-                              Container(
-                                width: 1.w,
-                                height: 40.h,
-                                color: MyColor.lightgrey,
-                              ),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  FontAwesomeIcons.heart,
-                                  color: Colors.black,
-                                  size: 16.sp,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                          SizedBox(width: 5.w),
+                         Text(
+                      '450 SAR',
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        color: MyColor.midgrey,
+                        decoration: TextDecoration.lineThrough,
+                      ),
+                    ),
+                       
                       ],
                     ),
+                    
                   ),
+                  SizedBox(height: 10.h,),
+                     Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.w),
+                       child: Container(
+                            padding: EdgeInsets.zero,
+                            height: 45.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.r),
+                              border: Border.all(color: MyColor.lightgrey),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.shopping_bag_outlined,
+                                    color: Colors.black,
+                                    size: 20.sp,
+                                  ),
+                                ),
+                                Container(
+                                  width: 1.w,
+                                  height: 40.h,
+                                  color: MyColor.lightgrey,
+                                ),
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    FontAwesomeIcons.heart,
+                                    color: Colors.black,
+                                    size: 16.sp,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                     ),
                 ],
               ),
             ),
