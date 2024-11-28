@@ -1,12 +1,16 @@
 import 'dart:developer';
 import 'package:alhayik/core/constant/color/my_color.dart';
 import 'package:alhayik/core/routing/routes.dart';
+import 'package:alhayik/features/auth/sign_in/data/models/login_reques_body.dart';
+import 'package:alhayik/features/auth/sign_in/logic/cubit/login_cubit.dart';
 import 'package:alhayik/features/auth/sign_in/ui/widgets/custom_button.dart';
 import 'package:alhayik/features/auth/sign_in/ui/widgets/email_and_password.dart';
 import 'package:alhayik/features/auth/sign_in/ui/widgets/forget_pass.dart';
+import 'package:alhayik/features/auth/sign_in/ui/widgets/login_bloc_listener.dart';
 import 'package:alhayik/sign_in_method/sign_in_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -35,24 +39,6 @@ class Login extends StatelessWidget {
     }
   }
 
-  // Helper function to show error dialog
-  void _showErrorDialog(BuildContext context, String message) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Error'),
-          content: Text(message),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +66,8 @@ class Login extends StatelessWidget {
                 SizedBox(height: 40.h),
                 CustomButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, Routes.mainPage);
+                    validateThenDoLogin(context);
+                   // Navigator.pushNamed(context, Routes.mainPage);
                   },
                   txt: 'Login',
                 ),
@@ -92,7 +79,7 @@ class Login extends StatelessWidget {
                         onPressed: (){
                           loginWithFacebook(context);
                         },
-                        icon: Icon(FontAwesomeIcons.facebook
+                        icon: const Icon(FontAwesomeIcons.facebook
                         , color: Colors.blue,
                         ),
                         
@@ -102,7 +89,7 @@ class Login extends StatelessWidget {
                         onPressed: (){
                           SignInMethods.signInWithGoogle();
                         },
-                        icon: Icon(FontAwesomeIcons.google
+                        icon: const Icon(FontAwesomeIcons.google
                         , color: Colors.red,
                         ),
                         
@@ -137,6 +124,7 @@ class Login extends StatelessWidget {
                     ),
                   ],
                 ),
+                 const LoginBlocListener(),
                 SizedBox(height: 60.h),
               ],
             ),
@@ -144,5 +132,19 @@ class Login extends StatelessWidget {
         ),
       ),
     );
+  }
+    void validateThenDoLogin(BuildContext context) {
+    final loginCubit = context.read<LoginCubit>();
+    if (loginCubit.formKey.currentState!.validate()) {
+      print('Form validated, emitting login state');
+      loginCubit.emitLoginStates(
+        LoginRequestBody(
+          phone: loginCubit.emailController.text,
+          password: loginCubit.passwordController.text,
+        ),
+      );
+    } else {
+      print('Form validation failed');
+    }
   }
 }

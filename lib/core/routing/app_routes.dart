@@ -1,6 +1,8 @@
+import 'package:alhayik/core/di/dependancy_injection.dart';
 import 'package:alhayik/core/routing/routes.dart';
 import 'package:alhayik/features/auth/forget_pass_screen/ui/forget_pass_screen.dart';
 import 'package:alhayik/features/auth/forget_pass_screen/verification/ui/Verificarion.dart';
+import 'package:alhayik/features/auth/sign_in/logic/cubit/login_cubit.dart';
 import 'package:alhayik/features/auth/sign_in/ui/login.dart';
 import 'package:alhayik/features/auth/sign_up/ui/Sign_up.dart';
 import 'package:alhayik/features/employee/cart_shopping/ui/cart_shopping.dart';
@@ -25,6 +27,7 @@ import 'package:alhayik/features/employee/item/ui/items_details.dart';
 import 'package:alhayik/features/employee/notification/notification.dart';
 import 'package:alhayik/features/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 
@@ -39,7 +42,10 @@ class AppRouter {
         );
       case Routes.loginScreen:
         return MaterialPageRoute(
-          builder: (_) =>  const Login()
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const Login(),
+          ),
         );
         case Routes.signUpScreen:
         return MaterialPageRoute(

@@ -1,12 +1,13 @@
 import 'package:alhayik/core/constant/color/my_color.dart';
 import 'package:alhayik/core/routing/routes.dart';
+import 'package:alhayik/features/employee/home/home_screem/data/model/items_apis_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BoxImageDetailshome extends StatelessWidget {
-  const BoxImageDetailshome({super.key});
-
+  const BoxImageDetailshome({super.key, this.doctorsModel});
+final Doctors? doctorsModel;
   @override
   Widget build(BuildContext context) {
     return Padding(

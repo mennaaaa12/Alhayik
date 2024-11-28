@@ -1,9 +1,12 @@
 import 'package:alhayik/core/constant/color/my_color.dart';
 import 'package:alhayik/core/routing/routes.dart';
 import 'package:alhayik/features/auth/sign_in/ui/widgets/custom_button.dart';
+import 'package:alhayik/features/auth/sign_up/logic/sign_up_cubit.dart';
+import 'package:alhayik/features/auth/sign_up/ui/widgets/sign_up_bloc_listener.dart';
 import 'package:alhayik/features/auth/sign_up/ui/widgets/text_field_signUp.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUp extends StatelessWidget {
@@ -34,6 +37,7 @@ class SignUp extends StatelessWidget {
                 CustomButton(
                   colorbutton: Colors.black,
                   onPressed: () {
+                   //  validateThenDoSignup(context);
                     Navigator.pushNamed(context, Routes.mainPage);
                   },
                   txt: 'Sign Up',
@@ -52,6 +56,7 @@ class SignUp extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
+                        //  validateThenDoLogin(context);
                         Navigator.pushNamed(context, Routes.loginScreen);
                       },
                       child: Text(
@@ -65,11 +70,17 @@ class SignUp extends StatelessWidget {
                     ),
                   ],
                 ),
+              //    const SignupBlocListener(),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+ void validateThenDoSignup(BuildContext context) {
+    if (context.read<SignupCubit>().formKey.currentState!.validate()) {
+      context.read<SignupCubit>().emitSignupStates();
+    }
   }
 }
